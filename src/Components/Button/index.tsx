@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import './button.css';
 
 export interface ButtonProps {
@@ -40,8 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
-      {...props}
-    >
+      {...props}>
       {label}
     </button>
   );
