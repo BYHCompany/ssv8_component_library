@@ -1,48 +1,44 @@
 import React from 'react';
-import styled from 'styled-components';
-import './button.css';
-
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-}
+import { ButtonProps } from './buttonTypes';
+import { ButtonContent, ButtonTag, ContentWrap, LabelWrap } from './Elements';
 
 /**
  * Primary UI component for user interaction
  */
 export const Button: React.FC<ButtonProps> = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
+  paddingHorizontal = 30,
+  paddingVertical = 15,
+  variants,
+  startIcon,
+  endIcon,
+  label = 'Button',
+  fontSize = 22,
+  shadow,
+  height = 50,
+  width = 300,
+  disabled,
+  fullWidth,
 }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}>
-      {label}
-    </button>
+    <ButtonTag
+      onClick={() => {}}
+      height={height}
+      width={width}
+      fontSize={fontSize}
+      paddingHorizontal={paddingHorizontal}
+      paddingVertical={paddingVertical}
+      variants={variants}
+      shadow={shadow}
+      disabled={disabled}
+      fullWidth={fullWidth}>
+      {startIcon || endIcon ? (
+        <ButtonContent>
+          <ContentWrap>{startIcon}</ContentWrap> <LabelWrap>{label}</LabelWrap>
+          <ContentWrap> {endIcon}</ContentWrap>
+        </ButtonContent>
+      ) : (
+        <div>{label}</div>
+      )}
+    </ButtonTag>
   );
 };
