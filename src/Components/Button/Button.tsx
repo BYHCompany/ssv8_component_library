@@ -19,27 +19,33 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   fullWidth,
   onClick,
+  ...props
 }) => {
   return (
-    <ButtonTag
-      onClick={onClick}
-      height={height}
-      width={width}
-      fontSize={fontSize}
-      paddingHorizontal={paddingHorizontal}
-      paddingVertical={paddingVertical}
-      variants={variants}
-      shadow={shadow}
-      disabled={disabled}
-      fullWidth={fullWidth}>
-      {startIcon || endIcon ? (
-        <ButtonContent>
-          <ContentWrap>{startIcon}</ContentWrap> <LabelWrap>{label}</LabelWrap>
-          <ContentWrap> {endIcon}</ContentWrap>
-        </ButtonContent>
-      ) : (
-        <div>{label}</div>
-      )}
-    </ButtonTag>
+    <div>
+      <ButtonTag
+        onClick={onClick}
+        height={height}
+        width={width}
+        fontSize={fontSize}
+        paddingHorizontal={paddingHorizontal}
+        paddingVertical={paddingVertical}
+        variants={variants}
+        shadow={shadow}
+        disabled={disabled}
+        fullWidth={fullWidth}
+        {...props}>
+        {startIcon || endIcon ? (
+          <ButtonContent>
+            <ContentWrap>{startIcon}</ContentWrap> <LabelWrap>{label}</LabelWrap>
+            <ContentWrap> {endIcon}</ContentWrap>
+          </ButtonContent>
+        ) : (
+          <ButtonContent>
+            <LabelWrap>{label} </LabelWrap>
+          </ButtonContent>
+        )}
+      </ButtonTag>
+    </div>
   );
 };

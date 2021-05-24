@@ -1,5 +1,12 @@
+
+#EDITOR SETTINGS
+.vscode
 .idea
+
+#YARN
+yarn-error.log
+yarn.lock
+
+#OTHERS
 node_modules
 .env
-.vscode
-yarn-error.log

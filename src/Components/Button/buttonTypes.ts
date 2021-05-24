@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
-  variants: 'primary' | 'secondary' | 'default';
+  variants?: 'primary' | 'secondary' | 'default';
   /**
    *Icon for the start of a button. Request ReactNode => Icon (for example React Icon, Material Icon)
    */
@@ -52,8 +52,9 @@ export interface ButtonProps {
 
   onClick?: () => void;
 }
+
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variants: 'primary' | 'secondary' | 'default';
+  variants?: 'primary' | 'secondary' | 'default';
   paddingHorizontal?: number;
   paddingVertical?: number;
   fontSize?: number;
