@@ -9,4 +9,4 @@ module.exports = {
     'storybook-addon-styled-component-theme/dist/preset',
     '@storybook/addon-jest',
   ],
-};
+}
