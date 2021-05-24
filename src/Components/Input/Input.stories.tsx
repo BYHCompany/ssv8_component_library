@@ -3,10 +3,13 @@ import { Story, Meta } from '@storybook/react';
 import { Input } from './Input';
 import { AiFillHome } from 'react-icons/ai';
 import { InputProps } from './inputTypes';
+import { withTests } from '@storybook/addon-jest';
+// import results from '../../../.jest-test-results.json';
 
 export default {
   title: 'FormControls/Input',
   component: Input,
+  // decorators: [withTests({ results })],
 } as Meta;
 
 const Template: Story<InputProps> = (args) => <Input {...args} />;
@@ -30,3 +33,8 @@ Secondary.args = {
   endIcon: <AiFillHome />,
   variant: 'secondary',
 };
+
+// export const defaultView = () => <div>Jest results in storybook</div>;
+// defaultView.parameters = {
+//   jest: ['input.test.js'],
+// };
