@@ -10,7 +10,7 @@ export interface ButtonProps {
   /**
    *Font Size of button. Increasing/decreasing Icon and Font.
    */
-  fontSize: number;
+  fontSize?: number;
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
@@ -26,7 +26,7 @@ export interface ButtonProps {
   /**
    *Shadow of a button.
    */
-  shadow: boolean;
+  shadow?: boolean;
   /**
    *Main text of a button.
    */
@@ -34,31 +34,31 @@ export interface ButtonProps {
   /**
    *Height of a button.
    */
-  height: number;
+  height?: number;
   /**
    *Width of a button.
    */
-  width: number;
+  width?: number;
 
   /**
    *Disabled design
    */
-  disabled: boolean;
+  disabled?: boolean;
 
   /**
    *Full width button;
    */
-  fullWidth: boolean;
+  fullWidth?: boolean;
 }
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variants?: 'primary' | 'secondary' | 'default';
+  variants: 'primary' | 'secondary' | 'default';
   paddingHorizontal?: number;
   paddingVertical?: number;
-  fontSize: number;
-  shadow: boolean;
-  height: number;
-  width: number;
+  fontSize?: number;
+  shadow?: boolean;
+  height?: number;
+  width?: number;
   onClick: () => void;
-  fullWidth: boolean;
-  disabled: boolean;
+  fullWidth?: boolean;
+  disabled?: boolean;
 }

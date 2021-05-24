@@ -8,21 +8,17 @@ export const ButtonTag = styled.button<Props>`
   border: none;
   border-style: none;
   background: ${({ variants, disabled }) =>
-    disabled
-      ? '#EBEBEB'
-      : variants === 'primary'
-      ? '#072832'
-      : variants === 'secondary'
-      ? '#fff'
-      : '#EBEBEB'};
+    (disabled && '#EBEBEB') ||
+    (variants === 'primary' && '#072832') ||
+    (variants === 'secondary' && '#fff') ||
+    (variants === 'default' && '#EBEBEB')};
+
   color: ${({ variants, disabled }) =>
-    disabled
-      ? '#8C8C8C'
-      : variants === 'primary'
-      ? '#fff'
-      : variants === 'secondary'
-      ? '#072832'
-      : '#8C8C8C'};
+    (disabled && '#8C8C8C') ||
+    (variants === 'primary' && '#fff') ||
+    (variants === 'secondary' && '#072832') ||
+    (variants === 'default' && '#8C8C8C')};
+
   padding: ${({ paddingHorizontal, paddingVertical }) =>
     `${paddingVertical}px ${paddingHorizontal}px`};
   font-size: ${({ fontSize }) => `${fontSize}px`};
@@ -33,13 +29,10 @@ export const ButtonTag = styled.button<Props>`
 
   &:hover {
     background: ${({ variants, disabled }) =>
-      disabled
-        ? null
-        : variants === 'primary'
-        ? '#184c5c'
-        : variants === 'secondary'
-        ? '#EBEBEB'
-        : null};
+      (disabled && null) ||
+      (variants === 'primary' && '#184c5c') ||
+      (variants === 'secondary' && '#EBEBEB') ||
+      (variants === 'default' && null)};
   }
 `;
 

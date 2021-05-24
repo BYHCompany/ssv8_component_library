@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Button } from './index';
+import { Button } from './Button';
 import { BsFillHouseDoorFill } from 'react-icons/bs';
 import { ButtonProps } from './buttonTypes';
 
