@@ -51,6 +51,14 @@ export interface InputProps {
    * Allows to set own onChange callback
    */
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  /**
+   * Sets props to <input> element
+   */
+  inputFieldProps?: {};
+  /**
+   * Sets props to <div> element of all input
+   */
+  inputBlockProps?: {};
 }
 
 // Types for styled components

@@ -16,6 +16,8 @@ export const Input: React.FC<InputProps> = ({
   value,
   fullwidth = false,
   onChange,
+  inputFieldProps,
+  inputBlockProps,
 }): React.ReactElement => {
   return (
     <InputArea
@@ -23,7 +25,8 @@ export const Input: React.FC<InputProps> = ({
       variant={variant}
       width={width}
       opacity={opacity}
-      height={height}>
+      height={height}
+      {...inputBlockProps}>
       {startIcon || endIcon ? (
         <>
           {startIcon && (
@@ -45,6 +48,7 @@ export const Input: React.FC<InputProps> = ({
               width={width}
               placeholder={placeholder}
               fontSize={fontSize}
+              {...inputFieldProps}
             />
           </InputContent>
           {endIcon && (

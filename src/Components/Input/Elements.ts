@@ -1,19 +1,8 @@
 import styled from 'styled-components';
 import { IconWrapperProps, InputAreaProps, InputContentProps, InputFieldProps } from './inputTypes';
 
-export const InputField = styled.input<InputFieldProps>`
-  font-size: ${({ fontSize }) => `${fontSize}px`};
-  width: 100%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: #000;
-
-  &::placeholder {
-    opacity: 1;
-    color: #8c8c8c;
-  }
-`;
+//TODO:
+//1. Do hover effect for input
 
 export const InputArea = styled.div<InputAreaProps>`
   width: ${({ width, fullwidth }) => (fullwidth ? '100%' : `${width}px`)};
@@ -28,9 +17,19 @@ export const InputArea = styled.div<InputAreaProps>`
   display: flex;
   align-items: center;
   border-radius: 3px;
+`;
 
-  ${InputField} & {
-    box-shadow: 0px 0px 120px 10px rgba(0, 0, 0, 0.25);
+export const InputField = styled.input<InputFieldProps>`
+  font-size: ${({ fontSize }) => `${fontSize}px`};
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #000;
+
+  &::placeholder {
+    opacity: 1;
+    color: #8c8c8c;
   }
 `;
 
@@ -45,8 +44,8 @@ export const IconWrapper = styled.div<IconWrapperProps>`
   height: ${({ height }) => `${height}px`};
   background-color: ${({ isIconWrapperTransparent }) =>
     !isIconWrapperTransparent ? '#072832' : 'transparent'};
-  color: #fff;
   display: flex;
+  color: #fff;
   justify-content: center;
   align-items: center;
   width: ${({ height }) => `${height}px`};
