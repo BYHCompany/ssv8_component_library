@@ -18,10 +18,11 @@ export const Button: React.FC<ButtonProps> = ({
   width = 300,
   disabled,
   fullWidth,
+  onClick,
 }) => {
   return (
     <ButtonTag
-      onClick={() => {}}
+      onClick={onClick}
       height={height}
       width={width}
       fontSize={fontSize}
