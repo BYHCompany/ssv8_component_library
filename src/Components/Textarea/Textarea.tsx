@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextareaInput, TextAreaWrapper } from './Elements';
 import { TextareaProps } from './TextareaTypes';
 
@@ -21,7 +21,7 @@ export const Textarea: React.FC<TextareaProps> = ({
     onInput(e);
     setInputHeight('auto');
     setInputValue(e.currentTarget.value);
-    setInputHeight(e.currentTarget.scrollHeight);
+    setInputHeight(e.currentTarget.scrollHeight + 2 * padding);
     setInputLength(e.currentTarget.value.length);
   };
 
