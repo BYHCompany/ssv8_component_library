@@ -1,19 +1,21 @@
 import styled from 'styled-components';
-import { Props } from './buttonTypes';
+import { IconProps, Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
   cursor: pointer;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
   border-style: none;
-  background: ${({ variant, disabled }) =>
+  background: ${({ variant, disabled, customBgColor }) =>
     (disabled && '#EBEBEB') ||
+    (customBgColor && customBgColor) ||
     (variant === 'primary' && '#072832') ||
     (variant === 'secondary' && '#fff') ||
     (variant === 'default' && '#EBEBEB')};
 
-  color: ${({ variant, disabled }) =>
+  color: ${({ variant, disabled, customFontColor }) =>
     (disabled && '#8C8C8C') ||
+    (customFontColor && customFontColor) ||
     (variant === 'primary' && '#fff') ||
     (variant === 'secondary' && '#072832') ||
     (variant === 'default' && '#8C8C8C')};
@@ -36,9 +38,10 @@ export const ButtonTag = styled.button<Props>`
   }
 `;
 
-export const ContentWrap = styled.div`
+export const ContentWrap = styled.div<IconProps>`
+  color: ${({ iconColor }) => `${iconColor}`};
   display: flex;
-  align-items: center;
+  align-items: cent;
 `;
 export const LabelWrap = styled.div`
   padding: 0px 10px;

@@ -58,8 +58,22 @@ export interface ButtonProps {
    *Any onClicks event
    */
   onClick?: any;
-
-  tag?: string;
+  /**
+   *If tag is true ? your icon sets to center of the button, label automatically disabled, FOR SETTING ICON USE "STARTICON!!!!!"
+   */
+  tag?: boolean;
+  /**
+   Custom font color for button 
+   */
+  customFontColor?: string;
+  /**
+   Custom BackgroundColor for button
+   */
+  customBgColor?: string;
+  /**
+   Custom Icon color
+   */
+  iconColor?: string;
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
@@ -74,4 +88,11 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   fullWidth?: boolean;
   disabled?: boolean;
   borderRadius?: any;
+  customFontColor?: string;
+  customBgColor?: string;
+  iconColor?: string;
+}
+
+export interface IconProps extends React.ComponentPropsWithoutRef<'button'> {
+  iconColor?: string;
 }

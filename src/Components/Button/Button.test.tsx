@@ -6,9 +6,10 @@ import '@testing-library/jest-dom/extend-expect';
 import { BsFillHouseDoorFill } from 'react-icons/bs';
 
 describe('Button', () => {
-  const getButton = (onClick?: jest.Mock<any, any>) => {
+  const getButton = (onClick?: jest.Mock<any, any>, tag?: boolean) => {
     return render(
       <Button
+        tag={tag}
         startIcon={<BsFillHouseDoorFill />}
         onClick={onClick && onClick}
         variant={'primary'}
@@ -41,5 +42,11 @@ describe('Button', () => {
     const { getByTestId } = getButton();
     const endIcon = getByTestId('endIcon');
     expect(endIcon).toBeInTheDocument();
+  });
+  it('tag is true, label shouldn"t display ', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = getButton(onClick, true);
+    const icon = getByTestId('icon-wrapper');
+    expect(icon).toBeInTheDocument();
   });
 });
