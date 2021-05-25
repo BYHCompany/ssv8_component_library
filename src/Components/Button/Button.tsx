@@ -5,22 +5,25 @@ import { ButtonContent, ButtonTag, ContentWrap, LabelWrap } from './Elements';
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
-  paddingHorizontal = 30,
-  paddingVertical = 15,
-  variants,
-  startIcon,
-  endIcon,
-  label = 'Button',
-  fontSize = 22,
-  shadow,
-  height = 50,
-  width = 300,
-  disabled,
-  fullWidth,
-  onClick,
+export const Button: React.FC<ButtonProps> = (
+  {
+    paddingHorizontal = 30,
+    paddingVertical = 15,
+    variants,
+    startIcon,
+    endIcon,
+    label = 'Button',
+    fontSize = 22,
+    shadow,
+    height = 50,
+    width = 300,
+    disabled,
+    fullWidth,
+    onClick,
+    borderRadius = '3px',
+  },
   ...props
-}) => {
+) => {
   return (
     <div>
       <ButtonTag
@@ -34,11 +37,13 @@ export const Button: React.FC<ButtonProps> = ({
         shadow={shadow}
         disabled={disabled}
         fullWidth={fullWidth}
+        borderRadius={borderRadius}
         {...props}>
         {startIcon || endIcon ? (
           <ButtonContent>
-            <ContentWrap>{startIcon}</ContentWrap> <LabelWrap>{label}</LabelWrap>
-            <ContentWrap> {endIcon}</ContentWrap>
+            <ContentWrap data-testid="startIcon">{startIcon}</ContentWrap>{' '}
+            <LabelWrap>{label}</LabelWrap>
+            <ContentWrap data-testid="endIcon"> {endIcon}</ContentWrap>
           </ButtonContent>
         ) : (
           <ButtonContent>

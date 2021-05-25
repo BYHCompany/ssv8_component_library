@@ -3,7 +3,7 @@ import { Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
   border-style: none;
   background: ${({ variants, disabled }) =>

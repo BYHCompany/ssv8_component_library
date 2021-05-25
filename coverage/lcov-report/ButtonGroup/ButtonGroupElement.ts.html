@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Title/TitleElements.ts</title>
+    <title>Code coverage report for ButtonGroup/ButtonGroupElement.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Title</a> TitleElements.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">ButtonGroup</a> ButtonGroupElement.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/16</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -67,40 +67,25 @@
 <a name='L8'></a><a href='#L8'>8</a>
 <a name='L9'></a><a href='#L9'>9</a>
 <a name='L10'></a><a href='#L10'>10</a>
-<a name='L11'></a><a href='#L11'>11</a>
-<a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L11'></a><a href='#L11'>11</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styled from 'styled-components';
-import { TitleWrapperPros } from './titleType';
+import { ButtonWrapperProps } from './buttonGroupType';
 &nbsp;
-export const TextWrapper = styled.div&lt;TitleWrapperPros&gt;`
-  color: ${({ variant }) =&gt;
-    (variant === 'primary' &amp;&amp; '#072832') ||
-    (<span class="branch-2 cbranch-no" title="branch not covered" >variant === 'secondary' </span>&amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >'#fff')</span> ||
-    (<span class="branch-4 cbranch-no" title="branch not covered" >variant === 'default' </span>&amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >'#8C8C8C')</span>};
-  font-size: ${({ type }) =&gt;
-    (type === 'ultraSmall' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >'24px')</span> ||
-    (type === 'small' &amp;&amp; '30px') ||
-    (<span class="branch-4 cbranch-no" title="branch not covered" >type === 'medium' </span>&amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >'36px')</span> ||
-    (<span class="branch-6 cbranch-no" title="branch not covered" >type === 'large' </span>&amp;&amp; <span class="branch-7 cbranch-no" title="branch not covered" >'48px')</span> ||
-    (<span class="branch-8 cbranch-no" title="branch not covered" >type === 'ultraLarge' </span>&amp;&amp; <span class="branch-9 cbranch-no" title="branch not covered" >'60px')</span>};
+export const ButtonGroupWrapper = styled.div&lt;ButtonWrapperProps&gt;`
+  max-width: ${({ width }) =&gt; `${width}px`};
+  width: 100%;
+  max-height: ${({ height }) =&gt; `${height}px`};
+  height: 100%;
+  display: flex;
 `;
 &nbsp;</pre></td></tr></table></pre>
 

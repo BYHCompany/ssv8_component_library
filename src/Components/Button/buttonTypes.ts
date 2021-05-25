@@ -50,7 +50,14 @@ export interface ButtonProps {
    */
   fullWidth?: boolean;
 
-  onClick?: () => void;
+  /**
+   *Expected string like in default css (border-radius: 3px)
+   */
+  borderRadius?: any;
+  /**
+   *Any onClicks event
+   */
+  onClick?: any;
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
@@ -61,7 +68,8 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   shadow?: boolean;
   height?: number;
   width?: number;
-  onClick?: () => void;
+  onClick?: any;
   fullWidth?: boolean;
   disabled?: boolean;
+  borderRadius?: any;
 }

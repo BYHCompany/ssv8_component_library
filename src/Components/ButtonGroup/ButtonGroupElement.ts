@@ -7,5 +7,4 @@ export const ButtonGroupWrapper = styled.div<ButtonWrapperProps>`
   max-height: ${({ height }) => `${height}px`};
   height: 100%;
   display: flex;
-  flex-wrap: nowrap;
 `;
