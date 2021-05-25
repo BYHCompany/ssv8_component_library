@@ -10,7 +10,7 @@ export const Title: React.FC<TitleProps> = ({
 }) => {
   return (
     <TextWrapper {...props} variant={variant} type={type}>
-      {(type === 'ultraSmall' && <h5>{text}</h5>) ||
+      {(type === 'ultraSmall' && <h5 data-testid="h5">{text}</h5>) ||
         (type === 'small' && <h4>{text}</h4>) ||
         (type === 'medium' && <h3>{text}</h3>) ||
         (type === 'large' && <h2>{text}</h2>) ||
