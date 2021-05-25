@@ -1,12 +1,16 @@
-
-#EDITOR SETTINGS
-.vscode
-.idea
-
-#YARN
-yarn-error.log
-yarn.lock
-
-#OTHERS
+#Modules
 node_modules
+
+#Yarn files
+yarn.lock
+yarn-error.log
+
+#Tests result file
+.jest-test-results.json
+
+#IDE'S settings
+.idea
+.vscode
+
+#ENV
 .env
