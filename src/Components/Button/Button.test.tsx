@@ -11,7 +11,7 @@ describe('Button', () => {
       <Button
         startIcon={<BsFillHouseDoorFill />}
         onClick={onClick && onClick}
-        variants={'primary'}
+        variant={'primary'}
         label={'Hello'}
       />,
     );

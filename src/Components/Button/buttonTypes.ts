@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
-  variants?: 'primary' | 'secondary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default';
   /**
    *Icon for the start of a button. Request ReactNode => Icon (for example React Icon, Material Icon)
    */
@@ -30,7 +30,7 @@ export interface ButtonProps {
   /**
    *Main text of a button.
    */
-  label: string;
+  label?: string;
   /**
    *Height of a button.
    */
@@ -61,7 +61,7 @@ export interface ButtonProps {
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variants?: 'primary' | 'secondary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default';
   paddingHorizontal?: number;
   paddingVertical?: number;
   fontSize?: number;

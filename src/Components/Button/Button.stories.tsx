@@ -13,7 +13,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variants: 'primary',
+  variant: 'primary',
   label: 'Primary Button',
   paddingHorizontal: 30,
   paddingVertical: 15,
@@ -24,7 +24,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Secondary Button',
-  variants: 'secondary',
+  variant: 'secondary',
   paddingHorizontal: 25,
   paddingVertical: 15,
   fontSize: 20,
@@ -33,7 +33,7 @@ Secondary.args = {
 export const WithOutIcons = Template.bind({});
 Secondary.args = {
   label: 'Secondary Button',
-  variants: 'secondary',
+  variant: 'secondary',
   paddingHorizontal: 25,
   paddingVertical: 15,
   fontSize: 20,

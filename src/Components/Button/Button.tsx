@@ -9,7 +9,7 @@ export const Button: React.FC<ButtonProps> = (
   {
     paddingHorizontal = 30,
     paddingVertical = 15,
-    variants,
+    variant,
     startIcon,
     endIcon,
     label = 'Button',
@@ -33,7 +33,7 @@ export const Button: React.FC<ButtonProps> = (
         fontSize={fontSize}
         paddingHorizontal={paddingHorizontal}
         paddingVertical={paddingVertical}
-        variants={variants}
+        variant={variant}
         shadow={shadow}
         disabled={disabled}
         fullWidth={fullWidth}
