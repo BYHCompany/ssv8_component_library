@@ -10,8 +10,8 @@ describe('Image', () => {
     return render(<ImageComponent alt="photo" height={500} width={300} src={img} />);
   };
   const getImage = () => {
-    const { getByRole } = ImageTest();
-    const image = getByRole('img');
+    const { getByTestId } = ImageTest();
+    const image = getByTestId('imgDiv');
     return image;
   };
   it('image should render in the document', () => {

@@ -58,6 +58,8 @@ export interface ButtonProps {
    *Any onClicks event
    */
   onClick?: any;
+
+  tag?: string;
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {

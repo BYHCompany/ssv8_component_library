@@ -21,6 +21,7 @@ export const Button: React.FC<ButtonProps> = (
     fullWidth,
     onClick,
     borderRadius = '3px',
+    tag,
   },
   ...props
 ) => {
