@@ -1,7 +1,16 @@
-.idea
+#Modules
 node_modules
-.env
-.vscode
-yarn-error.log
-.jest-test-results.json
+
+#Yarn files
 yarn.lock
+yarn-error.log
+
+#Tests result file
+.jest-test-results.json
+
+#IDE'S settings
+.idea
+.vscode
+
+#ENV
+.env

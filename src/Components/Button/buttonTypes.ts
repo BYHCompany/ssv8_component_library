@@ -49,6 +49,8 @@ export interface ButtonProps {
    *Full width button;
    */
   fullWidth?: boolean;
+
+  onClick?: () => void;
 }
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variants: 'primary' | 'secondary' | 'default';
@@ -58,7 +60,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   shadow?: boolean;
   height?: number;
   width?: number;
-  onClick: () => void;
+  onClick?: () => void;
   fullWidth?: boolean;
   disabled?: boolean;
 }
