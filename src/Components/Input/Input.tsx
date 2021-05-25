@@ -31,6 +31,7 @@ export const Input: React.FC<InputProps> = ({
         <>
           {startIcon && (
             <IconWrapper
+              data-testid="startIconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart
               height={height}>
@@ -53,6 +54,7 @@ export const Input: React.FC<InputProps> = ({
           </InputContent>
           {endIcon && (
             <IconWrapper
+              data-testid="endIconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart={false}
               height={height}>
