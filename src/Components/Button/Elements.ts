@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import { Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
-  font-family: 'Nunito', sans-serif;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
   border-style: none;
   background: ${({ variants, disabled }) =>
@@ -23,6 +22,7 @@ export const ButtonTag = styled.button<Props>`
     `${paddingVertical}px ${paddingHorizontal}px`};
   font-size: ${({ fontSize }) => `${fontSize}px`};
   box-shadow: ${({ shadow }) => (shadow ? '0px 4px 0px rgba(0, 0, 0, .25)' : null)};
+
   height: ${({ height }) => `${height}px`};
   width: ${({ width, fullWidth }) => (fullWidth ? '100%' : `${width}px`)};
   transition: 0.15s ease-in-out;
@@ -42,6 +42,8 @@ export const ContentWrap = styled.div`
 `;
 export const LabelWrap = styled.div`
   padding: 0px 10px;
+  display: flex;
+  align-items: center;
 `;
 
 export const ButtonContent = styled.div`
