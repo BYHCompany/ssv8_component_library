@@ -1,8 +1,9 @@
+export type Variant = 'primary' | 'default';
 export interface TextareaProps {
   /**
    * Variant sets common style of textarea
    */
-  variant?: 'primary' | 'default';
+  variant?: Variant;
   /**
    * Value sets textarea's value
    */

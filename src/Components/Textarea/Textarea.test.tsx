@@ -3,6 +3,7 @@ import React from 'react';
 import { Textarea } from './Textarea';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Variant } from './TextareaTypes';
 
 describe('Text area', () => {
   const placeholder = 'Placeholder';
@@ -10,7 +11,7 @@ describe('Text area', () => {
   const onInput = jest.fn();
   const padding = 20;
 
-  const renderTextArea = (argValue: string) =>
+  const renderTextArea = (argValue: string, variant: Variant = 'default') =>
     render(
       <Textarea
         width={500}
@@ -20,6 +21,7 @@ describe('Text area', () => {
         onInput={onInput}
         fontSize={18}
         padding={padding}
+        variant={variant}
       />,
     );
 
@@ -50,5 +52,17 @@ describe('Text area', () => {
   it('Text area should be with right font size', () => {
     const { getByRole } = renderTextArea(value);
     expect(getByRole('textbox')).toHaveStyle({ fontSize: '18px' });
+  });
+  it('Text area should be with right background color', () => {
+    const { getByTestId } = renderTextArea(value, 'primary');
+    expect(getByTestId('textAreaWrapper')).toHaveStyle({
+      backgroundColor: 'rgba(255,255,255,0.5)',
+    });
+  });
+  it('Text area should be with right background color', () => {
+    const { getByTestId } = renderTextArea(value, 'default');
+    expect(getByTestId('textAreaWrapper')).toHaveStyle({
+      backgroundColor: '#EBEBEB',
+    });
   });
 });
