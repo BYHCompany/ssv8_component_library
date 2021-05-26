@@ -65,4 +65,10 @@ describe('Text area', () => {
       backgroundColor: '#EBEBEB',
     });
   });
+  it('Text area should be with right background color', () => {
+    const { getByTestId } = renderTextArea(value, 'default');
+    expect(getByTestId('textAreaWrapper')).toHaveStyle({
+      padding: '20px',
+    });
+  });
 });
