@@ -7,7 +7,7 @@ describe('Image', () => {
   const ImageTest = () => {
     const img =
       'https://images.unsplash.com/photo-1621570359159-72e496ab7d7b?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80';
-    return render(<ImageComponent alt="photo" height={500} width={300} src={img} />);
+    return render(<ImageComponent height={500} width={300} src={img} />);
   };
   const getImage = () => {
     const { getByTestId } = ImageTest();
