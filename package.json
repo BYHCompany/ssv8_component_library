@@ -44,7 +44,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "test:watch": "test --watch",
-    "test:coverage": "test --coverage",
+    "coverage": "jest --coverage --watchAll",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json --watch"
   },
   "dependencies": {
