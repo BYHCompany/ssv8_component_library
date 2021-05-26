@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Aside, DIV, Item, LabelDiv, UL } from './Elements';
 import { IoIosArrowDown } from 'react-icons/io';
-import { DropdownProps, LabelProps } from './DropdownTypes';
+import { DropdownProps } from './DropdownTypes';
 import { ItemType } from './DropdownTypes';
 
 export const Dropdown: React.FC<DropdownProps> = ({
