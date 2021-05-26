@@ -30,3 +30,11 @@ Secondary.args = {
   fontSize: 20,
   endIcon: <BsFillHouseDoorFill />,
 };
+export const WithOutIcons = Template.bind({});
+Secondary.args = {
+  label: 'Secondary Button',
+  variants: 'secondary',
+  paddingHorizontal: 25,
+  paddingVertical: 15,
+  fontSize: 20,
+};

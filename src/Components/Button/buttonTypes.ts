@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
-  variants: 'primary' | 'secondary' | 'default';
+  variants?: 'primary' | 'secondary' | 'default';
   /**
    *Icon for the start of a button. Request ReactNode => Icon (for example React Icon, Material Icon)
    */
@@ -49,16 +49,27 @@ export interface ButtonProps {
    *Full width button;
    */
   fullWidth?: boolean;
+
+  /**
+   *Expected string like in default css (border-radius: 3px)
+   */
+  borderRadius?: any;
+  /**
+   *Any onClicks event
+   */
+  onClick?: any;
 }
+
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variants: 'primary' | 'secondary' | 'default';
+  variants?: 'primary' | 'secondary' | 'default';
   paddingHorizontal?: number;
   paddingVertical?: number;
   fontSize?: number;
   shadow?: boolean;
   height?: number;
   width?: number;
-  onClick: () => void;
+  onClick?: any;
   fullWidth?: boolean;
   disabled?: boolean;
+  borderRadius?: any;
 }
