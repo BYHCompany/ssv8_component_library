@@ -1,12 +1,14 @@
 #Modules
 node_modules
 
+
 #Yarn files
 yarn.lock
 yarn-error.log
 
 #Tests result file
 .jest-test-results.json
+coverage
 
 #IDE'S settings
 .idea

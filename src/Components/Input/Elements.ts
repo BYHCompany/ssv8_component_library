@@ -9,11 +9,9 @@ export const InputArea = styled.div<InputAreaProps>`
   height: ${({ height }) => `${height}px`};
   opacity: ${({ opacity }) => opacity};
   background-color: ${({ variant }) =>
-    variant === 'primary'
-      ? '#EBEBEB'
-      : variant === 'secondary'
-      ? 'rgba(255, 255, 255, 0.5)'
-      : '#EBEBEB'};
+    (variant === 'primary' && '#EBEBEB') ||
+    (variant === 'secondary' && 'rgba(255, 255, 255, 0.5)') ||
+    (variant === 'default' && '#EBEBEB')};
   display: flex;
   align-items: center;
   border-radius: 3px;

@@ -14,7 +14,7 @@ describe('Text area', () => {
     render(
       <Textarea
         width={500}
-        height={100}
+        height={140}
         placeholder={placeholder}
         value={argValue}
         onInput={onInput}
@@ -45,7 +45,7 @@ describe('Text area', () => {
   });
   it('Text area should be with right height', () => {
     const { getByTestId } = renderTextArea(value);
-    expect(getByTestId('textAreaWrapper')).toHaveStyle({ height: '100px' });
+    expect(getByTestId('textAreaWrapper')).toHaveStyle({ maxHeight: '140px' });
   });
   it('Text area should be with right font size', () => {
     const { getByRole } = renderTextArea(value);
