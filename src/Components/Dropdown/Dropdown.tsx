@@ -1,74 +1,83 @@
 import React, { useState } from 'react';
-import { DIV, Item, LabelDiv, UL } from './Elements';
+import { Aside, DIV, Item, LabelDiv, UL } from './Elements';
 import { IoIosArrowDown } from 'react-icons/io';
 import { DropdownProps, LabelProps } from './DropdownTypes';
 import { ItemType } from './DropdownTypes';
 
-const array = [
-  { label: 'Латвия', id: 1231 },
-  { label: 'Литва', id: 1232 },
-  { label: 'Эстония', id: 1233 },
-  { label: 'Россия', id: 1234 },
-  { label: 'Германия', id: 1235 },
-  { label: 'Польша', id: 1236 },
-  { label: 'Нидерланды', id: 1237 },
-  { label: 'Испания', id: 1238 },
-];
-
-const Label: React.FC<LabelProps> = ({ children, onClick, padding }) => {
-  return (
-    <LabelDiv padding={padding} onClick={onClick}>
-      {children}
-    </LabelDiv>
-  );
-};
-
-//TODO
-
 export const Dropdown: React.FC<DropdownProps> = ({
-  label = 'Default',
+  label,
   height = 40,
   width = 280,
-  items = array,
+  items,
   itemsFontSize = 14,
   labelFontSize = 14,
   padding = 10,
   variant = 'default',
+  itemsScrollHeight = 300,
+  callback,
 }) => {
   const [visible, setVisible] = useState(false);
   const [currentElem, setCurrentElem] = useState<string>();
   let i = 0;
 
+  const noneObj = {
+    id: 'none',
+    label: 'none',
+    value: 'none',
+  } as ItemType;
+
   const handleClick = () => setVisible(!visible);
 
-  const itemClick = (label: string) => {
+  const itemClick = (item: ItemType) => {
+    setCurrentElem(item.label);
+    setVisible(false);
+    callback && callback(item);
+  };
+
+  const setNoneItem = () => {
     setCurrentElem(label);
     setVisible(false);
+    callback && callback(noneObj);
   };
 
   return (
-    <DIV>
-      <Label
+    <DIV width={width}>
+      <LabelDiv
+        isItemsVisible={visible}
+        variant={variant}
         padding={padding}
         labelFontSize={labelFontSize}
         height={height}
         width={width}
+        isDefaultValue={currentElem === label}
+        isChosenElem={currentElem ? true : false}
         onClick={handleClick}>
         {currentElem ? currentElem : label}
         <IoIosArrowDown />
-      </Label>
+      </LabelDiv>
       {visible && (
-        <aside>
-          <UL>
+        <Aside width={width}>
+          <UL itemsScrollHeight={itemsScrollHeight}>
+            <Item
+              variant={variant}
+              onClick={() => setNoneItem()}
+              value={'none'}
+              padding={padding}
+              itemsFontSize={itemsFontSize}
+              height={height}
+              lastElement={false}
+              key={'universalKeyforDeffaultItem287346'}>
+              ---
+            </Item>
             {items.map((item: any) => {
               i++;
               return (
                 <Item
-                  onClick={() => itemClick(item.label)}
+                  variant={variant}
+                  onClick={() => itemClick(item)}
                   value={item.value}
                   padding={padding}
                   itemsFontSize={itemsFontSize}
-                  width={width}
                   height={height}
                   lastElement={items.length === i}
                   key={item.id}>
@@ -77,7 +86,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
               );
             })}
           </UL>
-        </aside>
+        </Aside>
       )}
     </DIV>
   );
