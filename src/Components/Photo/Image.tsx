@@ -1,11 +1,11 @@
 import React from 'react';
-import { ImageTag } from './ImageElements';
+import { ImageDiv } from './ImageElements';
 import { PhotoProps } from './imageType';
 
-export const ImageComponent: React.FC<PhotoProps> = ({ src, alt, height, width }) => {
+export const ImageComponent: React.FC<PhotoProps> = ({ src, height, width }) => {
   return (
-    <div>
-      <ImageTag height={height} width={width} src={src} alt={alt} />
-    </div>
+    <>
+      <ImageDiv data-testid="imgDiv" height={height} width={width} src={src} />
+    </>
   );
 };

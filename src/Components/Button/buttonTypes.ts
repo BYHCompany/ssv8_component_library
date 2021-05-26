@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
-  variants?: 'primary' | 'secondary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default';
   /**
    *Icon for the start of a button. Request ReactNode => Icon (for example React Icon, Material Icon)
    */
@@ -30,7 +30,7 @@ export interface ButtonProps {
   /**
    *Main text of a button.
    */
-  label: string;
+  label?: string;
   /**
    *Height of a button.
    */
@@ -58,10 +58,26 @@ export interface ButtonProps {
    *Any onClicks event
    */
   onClick?: any;
+  /**
+   *If tag is true ? your icon sets to center of the button, label automatically disabled, FOR SETTING ICON USE "STARTICON!!!!!"
+   */
+  tag?: boolean;
+  /**
+   Custom font color for button 
+   */
+  customFontColor?: string;
+  /**
+   Custom BackgroundColor for button
+   */
+  customBgColor?: string;
+  /**
+   Custom Icon color
+   */
+  iconColor?: string;
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variants?: 'primary' | 'secondary' | 'default';
+  variant?: 'primary' | 'secondary' | 'default';
   paddingHorizontal?: number;
   paddingVertical?: number;
   fontSize?: number;
@@ -72,4 +88,11 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   fullWidth?: boolean;
   disabled?: boolean;
   borderRadius?: any;
+  customFontColor?: string;
+  customBgColor?: string;
+  iconColor?: string;
+}
+
+export interface IconProps extends React.ComponentPropsWithoutRef<'button'> {
+  iconColor?: string;
 }
