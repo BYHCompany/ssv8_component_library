@@ -18,11 +18,11 @@ export const Textarea: React.FC<TextareaProps> = ({
   const [inputValue, setInputValue] = useState(value);
 
   const userInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
-    onInput(e);
     setInputHeight('auto');
     setInputValue(e.currentTarget.value);
     setInputHeight(e.currentTarget.scrollHeight + 2 * padding);
     setInputLength(e.currentTarget.value.length);
+    onInput && onInput(e);
   };
 
   return (

@@ -5,6 +5,7 @@ node_modules
 #Yarn files
 yarn.lock
 yarn-error.log
+<<<<<<< HEAD
 
 #Tests result file
 .jest-test-results.json
@@ -16,3 +17,8 @@ coverage
 
 #ENV
 .env
+=======
+.jest-test-results.json
+coverage
+yarn.lock
+>>>>>>> NN2
