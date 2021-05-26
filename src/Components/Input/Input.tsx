@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputArea, InputField, InputContent, IconWrapper } from './Elements';
 import { InputProps } from './inputTypes';
 
@@ -19,6 +19,13 @@ export const Input: React.FC<InputProps> = ({
   inputFieldProps,
   inputBlockProps,
 }): React.ReactElement => {
+  const [inputValue, setInputValue] = useState(value);
+
+  const change = (e: React.FormEvent<HTMLInputElement>) => {
+    setInputValue(e.currentTarget.value);
+    onChange && onChange(e);
+  };
+
   return (
     <InputArea
       fullwidth={fullwidth}
@@ -26,11 +33,13 @@ export const Input: React.FC<InputProps> = ({
       width={width}
       opacity={opacity}
       height={height}
+      data-testid="inputArea"
       {...inputBlockProps}>
       {startIcon || endIcon ? (
         <>
           {startIcon && (
             <IconWrapper
+              data-testid="iconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart
               height={height}>
@@ -40,8 +49,8 @@ export const Input: React.FC<InputProps> = ({
           <InputContent paddingsHorizontal={paddingsHorizontal}>
             <InputField
               fullwidth={fullwidth}
-              onChange={onChange}
-              value={value}
+              onChange={change}
+              value={inputValue}
               variant={variant}
               height={height}
               paddingsHorizontal={paddingsHorizontal}
@@ -53,6 +62,7 @@ export const Input: React.FC<InputProps> = ({
           </InputContent>
           {endIcon && (
             <IconWrapper
+              data-testid="iconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart={false}
               height={height}>

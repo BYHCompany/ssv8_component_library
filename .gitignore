@@ -4,3 +4,5 @@ node_modules
 .vscode
 yarn-error.log
 .jest-test-results.json
+coverage
+yarn.lock
