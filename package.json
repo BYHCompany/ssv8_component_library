@@ -46,5 +46,9 @@
     "test:watch": "test --watch",
     "test:coverage": "test --coverage",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json --watch"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "react-router-dom": "^5.2.0"
   }
 }

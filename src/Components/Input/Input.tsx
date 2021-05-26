@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputArea, InputField, InputContent, IconWrapper } from './Elements';
 import { InputProps } from './inputTypes';
 
@@ -15,10 +15,17 @@ export const Input: React.FC<InputProps> = ({
   isIconWrapperTransparent = false,
   value,
   fullwidth = false,
-  onChange,
+  callback,
   inputFieldProps,
   inputBlockProps,
 }): React.ReactElement => {
+  const [inputValue, setInputValue] = useState<string>(value ? value : '');
+
+  const change = (e: React.FormEvent<HTMLInputElement>) => {
+    setInputValue(e.currentTarget.value);
+    callback && callback(e);
+  };
+
   return (
     <InputArea
       fullwidth={fullwidth}
@@ -26,12 +33,13 @@ export const Input: React.FC<InputProps> = ({
       width={width}
       opacity={opacity}
       height={height}
+      data-testid="inputArea"
       {...inputBlockProps}>
       {startIcon || endIcon ? (
         <>
           {startIcon && (
             <IconWrapper
-              data-testid="startIconWrapper"
+              data-testid="iconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart
               height={height}>
@@ -41,8 +49,8 @@ export const Input: React.FC<InputProps> = ({
           <InputContent paddingsHorizontal={paddingsHorizontal}>
             <InputField
               fullwidth={fullwidth}
-              onChange={onChange}
-              value={value}
+              onChange={change}
+              value={inputValue}
               variant={variant}
               height={height}
               paddingsHorizontal={paddingsHorizontal}
@@ -54,7 +62,7 @@ export const Input: React.FC<InputProps> = ({
           </InputContent>
           {endIcon && (
             <IconWrapper
-              data-testid="endIconWrapper"
+              data-testid="iconWrapper"
               isIconWrapperTransparent={isIconWrapperTransparent}
               isOnStart={false}
               height={height}>
@@ -66,7 +74,7 @@ export const Input: React.FC<InputProps> = ({
         <InputContent paddingsHorizontal={paddingsHorizontal}>
           <InputField
             fullwidth={fullwidth}
-            onChange={onChange}
+            onChange={change}
             value={value}
             variant={variant}
             paddingsHorizontal={paddingsHorizontal}

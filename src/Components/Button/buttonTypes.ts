@@ -1,3 +1,5 @@
+import { colorVariant } from '../Title/titleType';
+
 export interface ButtonProps {
   /**
    *Right and Left Padding of button.
@@ -14,7 +16,7 @@ export interface ButtonProps {
   /**
    *3 way of coloring button:  primary or secondary and default;
    */
-  variant?: 'primary' | 'secondary' | 'default';
+  variant?: colorVariant;
   /**
    *Icon for the start of a button. Request ReactNode => Icon (for example React Icon, Material Icon)
    */
@@ -77,7 +79,7 @@ export interface ButtonProps {
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variant?: 'primary' | 'secondary' | 'default';
+  variant?: colorVariant;
   paddingHorizontal?: number;
   paddingVertical?: number;
   fontSize?: number;

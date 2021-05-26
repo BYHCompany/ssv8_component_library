@@ -12,7 +12,6 @@ const Template: Story<PhotoProps> = (args) => <ImageComponent {...args} />;
 
 export const Main = Template.bind({});
 Main.args = {
-  alt: 'photo',
   src:
     'https://images.unsplash.com/photo-1621876844834-6edee3083b9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
   height: 734,

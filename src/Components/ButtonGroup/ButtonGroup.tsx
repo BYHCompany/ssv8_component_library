@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroupWrapper } from './ButtonGroupElement';
-import { ButtonGroupProps } from './buttonGroupType';
+import { buttonDif, ButtonGroupProps } from './buttonGroupType';
 import { Button } from '../Button/Button';
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = ({
@@ -18,10 +18,11 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   const lastElement = buttons.indexOf(buttons[buttons.length - 1]) + 1;
   let i: number = 0;
 
-  const handleClick = (label: string, id: string, value?: string) => {
-    value ? setStateLabel(value) : setStateLabel(label);
-    setClicked(id);
-    callback(stateLabel);
+  const handleClick = (button: buttonDif) => {
+    const value = button.value;
+    value ? setStateLabel(value) : setStateLabel(button.label);
+    setClicked(button.id);
+    callback && callback(stateLabel);
   };
 
   return (
@@ -37,7 +38,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
               width={calcButtonWidth}
               height={height}
               fontSize={fontSize}
-              onClick={() => handleClick(button.label, button.id, button.value)}
+              onClick={() => handleClick(button)}
               label={button.label}
               endIcon={button.endIcon}
               startIcon={button.startIcon}

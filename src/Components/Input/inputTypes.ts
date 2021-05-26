@@ -1,8 +1,10 @@
+import { colorVariant } from '../Title/titleType';
+
 export interface InputProps {
   /**
    * Variant property sets common style of input
    */
-  variant?: 'primary' | 'secondary' | 'default';
+  variant?: colorVariant;
   /**
    * Width property sets input width
    */
@@ -48,22 +50,22 @@ export interface InputProps {
    */
   value: string;
   /**
-   * Allows to set own onChange callback
+   * Allows to set own onChange callback (gets event)
    */
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  callback: (e: React.FormEvent<HTMLInputElement>) => void;
   /**
-   * Sets props to <input> element
+   * Sets props to "input" element
    */
   inputFieldProps?: {};
   /**
-   * Sets props to <div> element of all input
+   * Sets props to "div" element of all input
    */
   inputBlockProps?: {};
 }
 
 // Types for styled components
 export interface InputAreaProps extends React.ComponentPropsWithoutRef<'div'> {
-  variant: 'primary' | 'secondary' | 'default';
+  variant: colorVariant;
   width: number;
   height: number;
   opacity: number;
@@ -71,7 +73,7 @@ export interface InputAreaProps extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 export interface InputFieldProps extends React.ComponentPropsWithoutRef<'input'> {
-  variant: 'primary' | 'secondary' | 'default';
+  variant: colorVariant;
   fontSize: number;
   width: number;
   height: number;

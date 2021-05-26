@@ -1,7 +1,15 @@
 export interface PhotoProps {
+  /**
+   *Photo src
+   */
   src: string;
-  alt: string;
+  /**
+   *Height of photo
+   */
   height: number;
+  /**
+   *Width of photo
+   */
   width: number;
 }
 export interface PhotoWrapperProp extends React.ComponentPropsWithoutRef<'div'> {
