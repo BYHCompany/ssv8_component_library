@@ -22,6 +22,10 @@ export interface DropdownProps {
    */
   variant?: Variant;
   /**
+   * Custom border sets customized border for dropdown (example, "3px 3px 0 0")
+   */
+  customBorder?: string;
+  /**
    * Label font size sets label font size
    */
   labelFontSize?: number;
@@ -64,6 +68,7 @@ export interface LabelDivProps extends React.ComponentPropsWithoutRef<'div'> {
   width: number;
   labelFontSize: number;
   padding: number;
+  customBorder: string;
   variant: Variant;
   isChosenElem: boolean;
   isDefaultValue: boolean;
