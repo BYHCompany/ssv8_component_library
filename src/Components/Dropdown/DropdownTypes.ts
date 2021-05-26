@@ -61,6 +61,7 @@ export interface LiProps extends React.ComponentPropsWithoutRef<'li'> {
 
 export interface LabelDivProps extends React.ComponentPropsWithoutRef<'div'> {
   height: number;
+  width: number;
   labelFontSize: number;
   padding: number;
   variant: Variant;

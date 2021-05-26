@@ -31,7 +31,7 @@ Secondary.args = {
   endIcon: <BsFillHouseDoorFill />,
 };
 export const WithOutIcons = Template.bind({});
-Secondary.args = {
+WithOutIcons.args = {
   label: 'Secondary Button',
   variant: 'secondary',
   paddingHorizontal: 25,

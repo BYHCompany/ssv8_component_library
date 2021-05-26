@@ -12,17 +12,14 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   callback,
 }) => {
   const [clicked, setClicked] = React.useState<string>();
-  const [stateLabel, setStateLabel] = React.useState<string>('');
   let calcButtonWidth = width / buttons.length;
   const firstElement = buttons.indexOf(buttons[0]) + 1;
   const lastElement = buttons.indexOf(buttons[buttons.length - 1]) + 1;
   let i: number = 0;
 
   const handleClick = (button: buttonDif) => {
-    const value = button.value;
-    value ? setStateLabel(value) : setStateLabel(button.label);
     setClicked(button.id);
-    callback && callback(stateLabel);
+    callback && callback(button);
   };
 
   return (

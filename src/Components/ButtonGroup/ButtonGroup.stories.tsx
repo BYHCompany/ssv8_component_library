@@ -13,15 +13,19 @@ const Template: Story<ButtonGroupProps> = (args) => <ButtonGroup {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   buttons: [
-    { label: '2021', id: 'akldj;la' },
-    { label: '2020', id: 'akldj;laasdfa' },
-    { label: '2019', id: 'akldj12s' },
-    { label: '2018', id: 'aklacz12s' },
-    { label: '2017', id: 'aklaczmma' },
-    { label: '2016', id: 'akla12xxx' },
+    { label: '2016', id: 'akldj;la' },
+    { label: '2016', id: 'akldj;laasdfa' },
+    { label: '2016', id: 'akldj12s' },
+    { label: '2016', id: 'aklacz12s' },
+    { label: '2016', id: 'aklaczmma' },
+    { label: '2016', id: 'akladsa12xxx' },
+    { label: '2016', id: 'akladsaa12xxx' },
+    { label: '2016', id: 'aklada1aszsa2xxx' },
+    { label: '2016', id: 'aklada1assszzsa2xxx' },
+    { label: '2016', id: 'aklada1assaa2xxx' },
   ],
   height: 49,
-  width: 546,
+  width: 910,
   fontSize: 24,
   defVariant: 'secondary',
 };
