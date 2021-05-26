@@ -1,4 +1,7 @@
-export interface TitleProps {
+export type sizeTypes = 'ultraSmall' | 'small' | 'medium' | 'large' | 'ultraLarge';
+export type colorVariant = 'primary' | 'secondary' | 'default';
+
+export type TitleProps = {
   /**
    *Text for the title
    */
@@ -6,15 +9,21 @@ export interface TitleProps {
   /**
    *There are sizes which you can take, but also you can write your own
    */
-  type?: 'ultraSmall' | 'small' | 'medium' | 'large' | 'ultraLarge';
+  type?: sizeTypes;
 
   /**
    *Color for the title. You can write your own color
    */
-  variant?: 'primary' | 'secondary' | 'default';
-}
+  variant?: colorVariant;
+  /**
+   *FontWeight of the title
+   */
+  fontWeight?: number;
+  customVariantColor?: string;
+};
 
 export interface TitleWrapperPros extends React.ComponentPropsWithoutRef<'div'> {
-  type: 'ultraSmall' | 'small' | 'medium' | 'large' | 'ultraLarge';
-  variant: 'primary' | 'secondary' | 'default';
+  fontWeight?: number;
+  variant: colorVariant;
+  customVariantColor?: string;
 }

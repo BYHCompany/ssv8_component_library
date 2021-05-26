@@ -1,3 +1,5 @@
+import { colorVariant } from '../Title/titleType';
+
 export type buttonDif = {
   label: string;
   id: string;
@@ -31,7 +33,7 @@ export type ButtonGroupProps = {
   /**
    default VARIANT of not selected button
    */
-  defVariant?: 'primary' | 'secondary' | 'default';
+  defVariant?: colorVariant;
 
   /**
    custom callback. return string value of selected button, if value from button not selected return label
