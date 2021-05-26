@@ -6,11 +6,11 @@ export interface PhotoProps {
   /**
    * Height of photo
    */
-  height: number;
+  height?: number;
   /**
    * Width of photo
    */
-  width: number;
+  width?: number;
 }
 export interface PhotoWrapperProp extends React.ComponentPropsWithoutRef<'div'> {
   src: string;
