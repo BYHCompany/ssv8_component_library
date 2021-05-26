@@ -1,14 +1,14 @@
 export interface PhotoProps {
   /**
-   *Photo src
+   * Photo src
    */
   src: string;
   /**
-   *Height of photo
+   * Height of photo
    */
   height: number;
   /**
-   *Width of photo
+   * Width of photo
    */
   width: number;
 }
