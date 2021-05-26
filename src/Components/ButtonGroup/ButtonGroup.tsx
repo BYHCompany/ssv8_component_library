@@ -41,7 +41,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
               label={button.label}
               endIcon={button.endIcon}
               startIcon={button.startIcon}
-              variants={clicked === button.id ? 'primary' : defVariant}
+              variant={clicked === button.id ? 'primary' : defVariant}
             />
           </React.Fragment>
         );

@@ -7,20 +7,24 @@ import { ButtonContent, ButtonTag, ContentWrap, LabelWrap } from './Elements';
  */
 export const Button: React.FC<ButtonProps> = (
   {
-    paddingHorizontal = 30,
-    paddingVertical = 15,
-    variants,
+    paddingHorizontal,
+    paddingVertical,
+    variant,
     startIcon,
     endIcon,
-    label = 'Button',
-    fontSize = 22,
+    label,
+    fontSize,
     shadow,
-    height = 50,
-    width = 300,
+    height,
+    width,
     disabled,
     fullWidth,
     onClick,
     borderRadius = '3px',
+    customBgColor,
+    customFontColor,
+    iconColor,
+    tag,
   },
   ...props
 ) => {
@@ -29,25 +33,38 @@ export const Button: React.FC<ButtonProps> = (
       <ButtonTag
         onClick={onClick}
         height={height}
+        customBgColor={customBgColor}
+        customFontColor={customFontColor}
         width={width}
         fontSize={fontSize}
         paddingHorizontal={paddingHorizontal}
         paddingVertical={paddingVertical}
-        variants={variants}
+        variant={variant}
         shadow={shadow}
         disabled={disabled}
         fullWidth={fullWidth}
         borderRadius={borderRadius}
         {...props}>
-        {startIcon || endIcon ? (
+        {tag ? (
           <ButtonContent>
-            <ContentWrap data-testid="startIcon">{startIcon}</ContentWrap>{' '}
+            <ContentWrap data-testid="icon-wrapper" iconColor={iconColor}>
+              {' '}
+              {startIcon}{' '}
+            </ContentWrap>
+          </ButtonContent>
+        ) : startIcon || endIcon ? (
+          <ButtonContent>
+            <ContentWrap iconColor={iconColor} data-testid="startIcon">
+              {startIcon}
+            </ContentWrap>
             <LabelWrap>{label}</LabelWrap>
-            <ContentWrap data-testid="endIcon"> {endIcon}</ContentWrap>
+            <ContentWrap iconColor={iconColor} data-testid="endIcon">
+              {endIcon}
+            </ContentWrap>
           </ButtonContent>
         ) : (
           <ButtonContent>
-            <LabelWrap>{label} </LabelWrap>
+            <LabelWrap data-testid="labelTest">{label} </LabelWrap>
           </ButtonContent>
         )}
       </ButtonTag>

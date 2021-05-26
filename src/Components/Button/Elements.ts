@@ -1,22 +1,24 @@
 import styled from 'styled-components';
-import { Props } from './buttonTypes';
+import { IconProps, Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
   cursor: pointer;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
   border-style: none;
-  background: ${({ variants, disabled }) =>
+  background: ${({ variant, disabled, customBgColor }) =>
     (disabled && '#EBEBEB') ||
-    (variants === 'primary' && '#072832') ||
-    (variants === 'secondary' && '#fff') ||
-    (variants === 'default' && '#EBEBEB')};
+    (customBgColor && customBgColor) ||
+    (variant === 'primary' && '#072832') ||
+    (variant === 'secondary' && '#fff') ||
+    (variant === 'default' && '#EBEBEB')};
 
-  color: ${({ variants, disabled }) =>
+  color: ${({ variant, disabled, customFontColor }) =>
     (disabled && '#8C8C8C') ||
-    (variants === 'primary' && '#fff') ||
-    (variants === 'secondary' && '#072832') ||
-    (variants === 'default' && '#8C8C8C')};
+    (customFontColor && customFontColor) ||
+    (variant === 'primary' && '#fff') ||
+    (variant === 'secondary' && '#072832') ||
+    (variant === 'default' && '#8C8C8C')};
 
   padding: ${({ paddingHorizontal, paddingVertical }) =>
     `${paddingVertical}px ${paddingHorizontal}px`};
@@ -28,17 +30,18 @@ export const ButtonTag = styled.button<Props>`
   transition: 0.15s ease-in-out;
 
   &:hover {
-    background: ${({ variants, disabled }) =>
+    background: ${({ variant, disabled }) =>
       (disabled && null) ||
-      (variants === 'primary' && '#184c5c') ||
-      (variants === 'secondary' && '#EBEBEB') ||
-      (variants === 'default' && null)};
+      (variant === 'primary' && '#184c5c') ||
+      (variant === 'secondary' && '#EBEBEB') ||
+      (variant === 'default' && null)};
   }
 `;
 
-export const ContentWrap = styled.div`
+export const ContentWrap = styled.div<IconProps>`
+  color: ${({ iconColor }) => `${iconColor}`};
   display: flex;
-  align-items: center;
+  align-items: cent;
 `;
 export const LabelWrap = styled.div`
   padding: 0px 10px;

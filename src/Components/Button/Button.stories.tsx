@@ -13,7 +13,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variants: 'primary',
+  variant: 'primary',
   label: 'Primary Button',
   paddingHorizontal: 30,
   paddingVertical: 15,
@@ -24,7 +24,7 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Secondary Button',
-  variants: 'secondary',
+  variant: 'secondary',
   paddingHorizontal: 25,
   paddingVertical: 15,
   fontSize: 20,
@@ -33,8 +33,32 @@ Secondary.args = {
 export const WithOutIcons = Template.bind({});
 Secondary.args = {
   label: 'Secondary Button',
-  variants: 'secondary',
+  variant: 'secondary',
   paddingHorizontal: 25,
   paddingVertical: 15,
   fontSize: 20,
+};
+export const Tags = Template.bind({});
+Tags.args = {
+  tag: true,
+  customBgColor: '#99bfe3',
+  customFontColor: 'red',
+  paddingHorizontal: 5,
+  paddingVertical: 5,
+  height: 30,
+  width: 30,
+  fontSize: 15,
+  startIcon: <BsFillHouseDoorFill />,
+};
+export const ColoredButton = Template.bind({});
+ColoredButton.args = {
+  label: 'ColoredButton',
+  customBgColor: '#99bfe3',
+  customFontColor: 'red',
+  paddingHorizontal: 15,
+  paddingVertical: 15,
+  height: 40,
+  width: 300,
+  fontSize: 22,
+  startIcon: <BsFillHouseDoorFill />,
 };
