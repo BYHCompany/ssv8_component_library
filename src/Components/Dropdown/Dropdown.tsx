@@ -12,6 +12,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   itemsFontSize = 14,
   labelFontSize = 14,
   padding = 10,
+  customBorder = '3px',
   variant = 'default',
   itemsScrollHeight = 300,
   callback,
@@ -43,6 +44,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <DIV width={width}>
       <LabelDiv
+        customBorder={customBorder}
         isItemsVisible={visible}
         variant={variant}
         padding={padding}
