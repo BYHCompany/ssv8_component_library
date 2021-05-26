@@ -3,6 +3,7 @@ import React from 'react';
 import { ItemType, DropdownProps } from './DropdownTypes';
 import { render } from '@testing-library/react';
 import { Dropdown } from './Dropdown';
+import userEvent from '@testing-library/user-event';
 
 describe('Dropdown menu', () => {
   const array = [
@@ -26,5 +27,127 @@ describe('Dropdown menu', () => {
       label: 'Test label',
     });
     expect(getByText('Test label')).toBeInTheDocument();
+  });
+  it('Dropdown should show right items', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+    });
+    userEvent.click(getByText('Test label'));
+    expect(getByText(array[3].label)).toBeInTheDocument();
+  });
+  it('Dropdown should show right item on label place', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText(array[3].label));
+    expect(getByText(array[3].label)).toBeInTheDocument();
+  });
+  it('Dropdown should show default label after click on ---', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText('---'));
+    expect(getByText('Test label')).toBeInTheDocument();
+  });
+  it('Dropdown should show default background color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'default',
+    });
+    expect(getByText('Test label')).toHaveStyle({ backgroundColor: '#ffffff' });
+  });
+  it('Dropdown should show primary background color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'primary',
+    });
+    expect(getByText('Test label')).toHaveStyle({ backgroundColor: '#072832' });
+  });
+  it('Dropdown should show secondary background color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'secondary',
+    });
+    expect(getByText('Test label')).toHaveStyle({ backgroundColor: 'rgba(255,255,255,0.5)' });
+  });
+  it('Dropdown should show primary selected text color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'primary',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText(array[3].label));
+    expect(getByText(array[3].label)).toHaveStyle({ color: '#ffffff' });
+  });
+  it('Dropdown should show default selected text color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'default',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText(array[3].label));
+    expect(getByText(array[3].label)).toHaveStyle({ color: '#000000' });
+  });
+  it('Dropdown should show secondary selected text color', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'secondary',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText(array[3].label));
+    expect(getByText(array[3].label)).toHaveStyle({ color: '#000000' });
+  });
+  it('Dropdown should show default label color after click on ---', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'default',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText('---'));
+    expect(getByText('Test label')).toHaveStyle({ color: '#8C8C8C' });
+  });
+  it('Dropdown should show primary label color after click on ---', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'primary',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText('---'));
+    expect(getByText('Test label')).toHaveStyle({ color: '#ffffff' });
+  });
+  it('Dropdown should show secondary label color after click on ---', () => {
+    const { getByText } = renderDropdown({
+      items: array,
+      callback: mockedFn,
+      label: 'Test label',
+      variant: 'secondary',
+    });
+    userEvent.click(getByText('Test label'));
+    userEvent.click(getByText('---'));
+    expect(getByText('Test label')).toHaveStyle({ color: '#8C8C8C' });
   });
 });

@@ -1,32 +1,8 @@
 import React, { useState } from 'react';
-import { DIV, Item, LabelDiv, UL } from './Elements';
+import { Aside, DIV, Item, LabelDiv, UL } from './Elements';
 import { IoIosArrowDown } from 'react-icons/io';
 import { DropdownProps, LabelProps } from './DropdownTypes';
 import { ItemType } from './DropdownTypes';
-
-const Label: React.FC<LabelProps> = ({
-  children,
-  onClick,
-  padding,
-  height,
-  labelFontSize,
-  variant,
-  isChosenElem,
-}) => {
-  return (
-    <LabelDiv
-      isChosenElem={isChosenElem}
-      variant={variant}
-      labelFontSize={labelFontSize}
-      height={height}
-      padding={padding}
-      onClick={onClick}>
-      {children}
-    </LabelDiv>
-  );
-};
-
-//TODO
 
 export const Dropdown: React.FC<DropdownProps> = ({
   label,
@@ -37,6 +13,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   labelFontSize = 14,
   padding = 10,
   variant = 'default',
+  itemsScrollHeight = 300,
   callback,
 }) => {
   const [visible, setVisible] = useState(false);
@@ -65,20 +42,22 @@ export const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <DIV width={width}>
-      <Label
+      <LabelDiv
+        isItemsVisible={visible}
         variant={variant}
         padding={padding}
         labelFontSize={labelFontSize}
         height={height}
         width={width}
+        isDefaultValue={currentElem === label}
         isChosenElem={currentElem ? true : false}
         onClick={handleClick}>
         {currentElem ? currentElem : label}
         <IoIosArrowDown />
-      </Label>
+      </LabelDiv>
       {visible && (
-        <aside>
-          <UL>
+        <Aside width={width}>
+          <UL itemsScrollHeight={itemsScrollHeight}>
             <Item
               variant={variant}
               onClick={() => setNoneItem()}
@@ -107,7 +86,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
               );
             })}
           </UL>
-        </aside>
+        </Aside>
       )}
     </DIV>
   );
