@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 import React from 'react';
 import { Stepper } from './Stepper';
 import { StepperElement, StepperProps } from './StepperTypes';
 
-const doneItems: StepperElement[] = [
+export const doneItems: StepperElement[] = [
   { id: 'dsjhtfs67u', value: 'string' },
   { id: '2tarffuyewjk4', value: 'string' },
   { id: '348535j4hn578fsd', value: 'string' },
@@ -12,9 +12,10 @@ const doneItems: StepperElement[] = [
   { id: 'hfghfg465', value: 'string' },
   { id: 'gdfdfggfd', value: 'string' },
   { id: 'sffsd3456', value: 'string' },
+  { id: '11kkogfposbhjv3', value: 'string' },
 ];
 
-const testArray: StepperElement[] = [
+export const testArray: StepperElement[] = [
   { id: '11kkogfposbhjv3', value: 'string' },
   { id: '12sdf', value: 'string' },
   { id: '13sdf', value: 'string' },
@@ -35,7 +36,7 @@ const testArray: StepperElement[] = [
 export default {
   title: 'Common/Stepper',
   component: Stepper,
-} as Meta;
+};
 
 const Template: Story<StepperProps> = (args) => <Stepper {...args} />;
 
