@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactFragment, useEffect, useState } from 'react';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { Button } from '../Button/Button';
 import { StepperWrapper } from './Elements';
@@ -8,27 +8,44 @@ export const Stepper: React.FC<StepperProps> = ({
   allElements,
   doneElements,
 }): React.ReactElement => {
-  let i = 0;
-  let j = 0;
+  let allValues: string[] = [];
+  let doneValues: string[] = [];
+  const [indexes, setIndexes] = useState<number[]>([]);
 
-  const calcStep = (elem: any) => {
-    if (doneElements[j]) {
-      debugger;
-      if (doneElements[j].id === elem.id) {
-        i++;
-        j++;
-        return true;
-      } else {
-        i++;
-        return false;
-      }
-    }
+  let j = -1;
+
+  const getAllValues = () => {
+    allElements.forEach((item) => {
+      allValues.push(item.id);
+    });
   };
+  const getDoneValues = () => {
+    doneElements.forEach((item) => {
+      doneValues.push(item.id);
+    });
+  };
+
+  const setArrayIndexes = () => {
+    const arr = [];
+    allValues.forEach((item, i) => {
+      debugger;
+      arr.push(allValues.indexOf(doneValues.find((elem) => item === elem)));
+    });
+    setIndexes(arr);
+  };
+
+  useEffect(() => {
+    getAllValues();
+    getDoneValues();
+    setArrayIndexes();
+    console.log(indexes);
+  }, []);
 
   return (
     <StepperWrapper>
       {allElements.map((elem) => {
         debugger;
+        j++;
         return (
           <Button
             tag
@@ -37,7 +54,7 @@ export const Stepper: React.FC<StepperProps> = ({
             height={40}
             width={40}
             startIcon={
-              calcStep(elem) ? <IoCheckmarkDone key={elem.id + 'filtered'} /> : <React.Fragment />
+              indexes[j] > -1 ? <IoCheckmarkDone key={elem.id + 'filtered'} /> : <React.Fragment />
             }
           />
         );
