@@ -41,12 +41,10 @@ export interface ButtonProps {
    *Width of a button.
    */
   width?: number;
-
   /**
    *Disabled design
    */
   disabled?: boolean;
-
   /**
    *Full width button;
    */
@@ -65,17 +63,21 @@ export interface ButtonProps {
    */
   tag?: boolean;
   /**
-   Custom font color for button 
+   *Custom font color for button
    */
   customFontColor?: string;
   /**
-   Custom BackgroundColor for button
+   *Custom BackgroundColor for button
    */
   customBgColor?: string;
   /**
-   Custom Icon color
+   *Custom Icon color
    */
   iconColor?: string;
+  /**
+   * If true, sets accurate button height and width
+   */
+  accurateValues?: boolean;
 }
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
@@ -93,6 +95,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   customFontColor?: string;
   customBgColor?: string;
   iconColor?: string;
+  accurateValues?: boolean;
 }
 
 export interface IconProps extends React.ComponentPropsWithoutRef<'button'> {

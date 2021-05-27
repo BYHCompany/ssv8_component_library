@@ -2,9 +2,8 @@ import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { Stepper } from './Stepper';
-import { doneItems, testArray } from './Stepper.stories';
-import { StepperProps } from './StepperTypes';
 import userEvent from '@testing-library/user-event';
+import { doneItems, testArray } from './items';
 describe('Stepper', () => {
   const myCallback = jest.fn();
   const renderStepper = (args?: any) =>

@@ -25,7 +25,7 @@ export const ButtonTag = styled.button<Props>`
     `${paddingVertical}px ${paddingHorizontal}px`};
   font-size: ${({ fontSize }) => `${fontSize}px`};
   box-shadow: ${({ shadow }) => (shadow ? '0px 4px 0px rgba(0, 0, 0, .25)' : null)};
-  width: 100%;
+  width: ${({ accurateValues, width }) => (accurateValues ? `${width}px` : `100%`)};
   height: ${({ height }) => `${height}px`};
   max-width: ${({ width, fullWidth }) => (fullWidth ? '100%' : `${width}px`)};
   transition: 0.15s ease-in-out;
