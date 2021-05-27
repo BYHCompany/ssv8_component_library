@@ -19,6 +19,14 @@ export interface PaperProps {
    *maxHeight of paper,
    */
   maxWidth?: number;
+  /**
+   *borderRadius of paper,
+   */
+  borderRadius?: string;
+  /**
+   *boxShadow of paper,
+   */
+  boxShadow?: boolean;
 }
 
 export interface PaperWrapperProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -26,4 +34,6 @@ export interface PaperWrapperProps extends React.ComponentPropsWithoutRef<'div'>
   width?: number;
   maxHeight?: number;
   maxWidth?: number;
+  boxShadow?: boolean;
+  borderRadius?: string;
 }
