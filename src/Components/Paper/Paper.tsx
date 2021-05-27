@@ -8,8 +8,8 @@ export const Paper: React.FC<PaperProps> = ({
   height,
   width,
   children,
-  boxShadow,
-  borderRadius,
+  boxShadow = true,
+  borderRadius = '3px',
 }) => {
   return (
     <PaperWrapper

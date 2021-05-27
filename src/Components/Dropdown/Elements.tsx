@@ -29,7 +29,8 @@ export const LabelDiv = styled.div<LabelDivProps>`
   align-items: center;
   padding: ${({ padding }) => `${padding}px`};
   margin-bottom: 2px;
-  border-radius: ${({ isItemsVisible }) => (!isItemsVisible ? '3px 3px 3px 3px' : '3px 3px 0 0')};
+  border-radius: ${({ isItemsVisible, customBorder }) =>
+    isItemsVisible ? '3px 3px 0 0' : customBorder};
   font-size: ${({ labelFontSize }) => `${labelFontSize}px`};
   font-weight: 700;
   cursor: pointer;
