@@ -7,24 +7,25 @@ import { ButtonContent, ButtonTag, ContentWrap, LabelWrap } from './Elements';
  */
 export const Button: React.FC<ButtonProps> = (
   {
-    paddingHorizontal,
-    paddingVertical,
-    variant,
+    paddingHorizontal = 10,
+    paddingVertical = 10,
+    variant = 'default',
     startIcon,
     endIcon,
     label,
-    fontSize,
-    shadow,
-    height,
-    width,
-    disabled,
-    fullWidth,
+    fontSize = 14,
+    shadow = false,
+    height = 40,
+    width = 40,
+    disabled = false,
+    fullWidth = false,
     onClick,
     borderRadius = '3px',
     customBgColor,
     customFontColor,
     iconColor,
-    tag,
+    tag = false,
+    accurateValues = false,
   },
   ...props
 ) => {
@@ -44,6 +45,7 @@ export const Button: React.FC<ButtonProps> = (
         disabled={disabled}
         fullWidth={fullWidth}
         borderRadius={borderRadius}
+        accurateValues={accurateValues}
         {...props}>
         {tag ? (
           <ButtonContent>

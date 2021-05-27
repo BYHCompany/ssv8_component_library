@@ -17,7 +17,7 @@ export const Stepper: React.FC<StepperProps> = ({
   let doneValues: string[] = [];
   const [indexes, setIndexes] = useState<number[]>([]);
 
-  const height = (maxWidth - distanceBetweenSteps * allElements.length) / allElements.length;
+  const height = (maxWidth - distanceBetweenSteps * (allElements.length - 1)) / allElements.length;
 
   let j = -1;
 
@@ -33,8 +33,10 @@ export const Stepper: React.FC<StepperProps> = ({
   };
 
   const setArrayIndexes = () => {
-    const arr = [];
+    const arr: number[] = [];
     allValues.forEach((item) => {
+      debugger;
+      //@ts-ignore
       arr.push(allValues.indexOf(doneValues.find((elem) => item === elem)));
     });
     setIndexes(arr);
@@ -52,12 +54,16 @@ export const Stepper: React.FC<StepperProps> = ({
         j++;
         return (
           <Button
-            tag
+            tag={true}
+            label=""
             key={elem.id}
             variant="secondary"
+            fontSize={26}
+            accurateValues={true}
             height={height}
             width={height}
-            fontSize={26}
+            paddingHorizontal={15}
+            paddingVertical={15}
             borderRadius={customStepBorderRadius}
             onClick={() => callback(elem)}
             customFontColor="#072832"
