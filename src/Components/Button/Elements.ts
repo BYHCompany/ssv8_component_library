@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IconProps, Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
-  cursor: pointer;
+  cursor: ${({ disabled }) => !disabled && 'pointer'};
   font-weight: 700;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
@@ -38,7 +38,7 @@ export const ButtonTag = styled.button<Props>`
       (variant === 'default' && null)};
   }
   &:active {
-    transform: translateY(1px);
+    transform: ${({ disabled }) => !disabled && 'translateY(1px)'};
   }
 `;
 

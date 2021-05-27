@@ -16,10 +16,15 @@ export interface ListProps {
    *Font size of each list item
    */
   fontSize?: number;
+  /**
+   *Distance Between each list item
+   */
+  distanceBetweenLi?: number;
 }
 
 export interface ListItemProps extends React.ComponentPropsWithoutRef<'li'> {
   fontWeight?: number;
+  distanceBetweenLi?: number;
 }
 
 export interface ListItemWrapProps extends React.ComponentPropsWithoutRef<'div'> {

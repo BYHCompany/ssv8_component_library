@@ -13,6 +13,7 @@ export const ListItem = styled.li<ListItemProps>`
   text-decoration: none;
   font-weight: ${({ fontWeight }) => fontWeight};
   margin-right: 20px;
+  margin-bottom: ${({ distanceBetweenLi }) => `${distanceBetweenLi}px`}; ;
 `;
 
 export const ArrowIcon = styled(BiCheckDouble)<ArrowIconProps>`
