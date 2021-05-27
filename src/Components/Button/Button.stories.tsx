@@ -18,6 +18,8 @@ Primary.args = {
   paddingHorizontal: 30,
   paddingVertical: 15,
   fontSize: 20,
+  height: 50,
+  width: 300,
   startIcon: <BsFillHouseDoorFill />,
 };
 
@@ -29,14 +31,18 @@ Secondary.args = {
   paddingVertical: 15,
   fontSize: 20,
   endIcon: <BsFillHouseDoorFill />,
+  height: 50,
+  width: 300,
 };
-export const WithOutIcons = Template.bind({});
-Secondary.args = {
+export const WithoutIcons = Template.bind({});
+WithoutIcons.args = {
   label: 'Secondary Button',
   variant: 'secondary',
   paddingHorizontal: 25,
   paddingVertical: 15,
   fontSize: 20,
+  height: 50,
+  width: 300,
 };
 export const Tags = Template.bind({});
 Tags.args = {

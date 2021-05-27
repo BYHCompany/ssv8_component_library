@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ButtonGroup } from './ButtonGroup';
 import '@testing-library/jest-dom/extend-expect';
+import { buttonDif } from './buttonGroupType';
 
 describe('ButtonGroup', () => {
   const buttons = [
@@ -10,7 +11,7 @@ describe('ButtonGroup', () => {
     { label: 'Правый', value: 'right', id: 'akldmcc' },
   ];
 
-  const callback = (value: string) => {
+  const callback = (value: buttonDif) => {
     return value;
   };
 

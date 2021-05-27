@@ -3,6 +3,7 @@ import { IconProps, Props } from './buttonTypes';
 
 export const ButtonTag = styled.button<Props>`
   cursor: pointer;
+  font-weight: 700;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   border: none;
   border-style: none;
@@ -24,9 +25,9 @@ export const ButtonTag = styled.button<Props>`
     `${paddingVertical}px ${paddingHorizontal}px`};
   font-size: ${({ fontSize }) => `${fontSize}px`};
   box-shadow: ${({ shadow }) => (shadow ? '0px 4px 0px rgba(0, 0, 0, .25)' : null)};
-
+  width: 100%;
   height: ${({ height }) => `${height}px`};
-  width: ${({ width, fullWidth }) => (fullWidth ? '100%' : `${width}px`)};
+  max-width: ${({ width, fullWidth }) => (fullWidth ? '100%' : `${width}px`)};
   transition: 0.15s ease-in-out;
 
   &:hover {
@@ -35,6 +36,9 @@ export const ButtonTag = styled.button<Props>`
       (variant === 'primary' && '#184c5c') ||
       (variant === 'secondary' && '#EBEBEB') ||
       (variant === 'default' && null)};
+  }
+  &:active {
+    transform: translateY(1px);
   }
 `;
 
