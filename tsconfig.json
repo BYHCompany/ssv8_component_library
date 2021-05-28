@@ -19,15 +19,5 @@
     "jsx": "react"
   },
   "include": ["./src/"],
-  "exclude": [
-    "node_modules",
-    "lib",
-    "**/*.stories.tsx",
-    "**/*.test.tsx",
-    "**/*.test.ts",
-    "__mocks__",
-    ".storybook",
-    "coverage",
-    ".vscode"
-  ]
+  "exclude": ["node_modules", "lib", "**/*.stories.tsx", "**/*.test.tsx", "**/*.test.ts"]
 }
